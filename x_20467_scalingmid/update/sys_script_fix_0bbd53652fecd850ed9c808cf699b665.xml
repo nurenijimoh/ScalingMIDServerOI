@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
+    <sys_script_fix action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <before>false</before>
+        <description/>
+        <flush_cache>false</flush_cache>
+        <name>createRecord</name>
+        <record_for_rollback>false</record_for_rollback>
+        <run_once>true</run_once>
+        <script><![CDATA[var grMetricType = new GlideAggregate('sa_source_metric_type');
+grMetricType.addEncodedQuery('sourceSTARTSWITHOI_UIM');
+grMetricType.addAggregate('COUNT');
+grMetricType.query();
+if (grMetricType.next());
+var metricCount = grMetricType.getAggregate('COUNT');
+
+//gs.info("Metric count is " +  metricCount);
+
+var COUNT = 0;
+var grNode = new GlideAggregate('em_event');
+grNode.addEncodedQuery('sourceSTARTSWITHoi_uim');
+grNode.addAggregate('COUNT');
+grNode.groupBy('node');
+grNode.query();
+while (grNode.next()) {
+    var nodeCount = grNode.getAggregate('COUNT');
+
+   // gs.print("Metric count for CI " + grNode.node +" is "+nodeCount);
+    COUNT++;
+}
+//gs.print("The unique node count is " + COUNT);
+
+//gs.print("Total count is  " + metricCount * COUNT);
+
+var grOI = new GlideRecord('x_20467_scalingmid_oi_mid_server_scaling');
+grOI.initialize();
+grOI.report_ran = new GlideDateTime().getDisplayValue();
+grOI.number_of_metrics_monitored = metricCount;
+grOI.number_of_nodes_monitored = COUNT;
+var totalCount = metricCount*COUNT;
+grOI.total_number_metrics_by_nodes = totalCount;
+if(totalCount > 10000)
+grOI.recommendation = 'two';
+else
+	grOI.recommendation = 'one';
+grOI.insert();
+
+
+]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>vivek.satta</sys_created_by>
+        <sys_created_on>2020-05-03 11:41:09</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>0bbd53652fecd850ed9c808cf699b665</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>createRecord</sys_name>
+        <sys_package display_value="ScalingMidServerOI" source="x_20467_scalingmid">e90bcfed2f2cd850ed9c808cf699b6c6</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ScalingMidServerOI">e90bcfed2f2cd850ed9c808cf699b6c6</sys_scope>
+        <sys_update_name>sys_script_fix_0bbd53652fecd850ed9c808cf699b665</sys_update_name>
+        <sys_updated_by>vivek.satta</sys_updated_by>
+        <sys_updated_on>2020-05-03 11:51:42</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+</record_update>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <business_calendar/>
+        <condition/>
+        <conditional>false</conditional>
+        <entered_time>1970-01-01 00:00:00</entered_time>
+        <name>NWJ-MetricMonitoredCalculation</name>
+        <run_as display_value="Wole Jimoh">6816f79cc0a8016401c5a33be04be441</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_start>2020-05-03 10:35:56</run_start>
+        <run_time>1970-01-01 00:00:00</run_time>
+        <run_type>daily</run_type>
+        <script><![CDATA[var grMetricType = new GlideAggregate('sa_source_metric_type');
+grMetricType.addEncodedQuery('sourceSTARTSWITHOI_UIM');
+grMetricType.addAggregate('COUNT');
+grMetricType.query();
+if (grMetricType.next());
+var metricCount = grMetricType.getAggregate('COUNT');
+
+//gs.info("Metric count is " +  metricCount);
+
+var COUNT = 0;
+var grNode = new GlideAggregate('em_event');
+grNode.addEncodedQuery('sourceSTARTSWITHoi_uim');
+grNode.addAggregate('COUNT');
+grNode.groupBy('node');
+grNode.query();
+while (grNode.next()) {
+    var nodeCount = grNode.getAggregate('COUNT');
+
+   // gs.print("Metric count for CI " + grNode.node +" is "+nodeCount);
+    COUNT++;
+}
+//gs.print("The unique node count is " + COUNT);
+
+//gs.print("Total count is  " + metricCount * COUNT);
+
+var grOI = new GlideRecord('x_20467_scalingmid_oi_mid_server_scaling');
+grOI.initialize();
+grOI.report_ran = new GlideDateTime().getDisplayValue();
+grOI.number_of_metrics_monitored = metricCount;
+grOI.number_of_nodes_monitored = COUNT;
+var totalCount = metricCount*COUNT;
+grOI.total_number_metrics_by_nodes = totalCount;
+if(totalCount > 10000)
+grOI.recommendation = 'two';
+else
+	grOI.recommendation = 'one';
+grOI.insert();
+
+
+]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-05-03 10:36:44</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>7aee0fe52f6cd850ed9c808cf699b69b</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>NWJ-MetricMonitoredCalculation</sys_name>
+        <sys_package display_value="ScalingMidServerOI" source="x_20467_scalingmid">e90bcfed2f2cd850ed9c808cf699b6c6</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ScalingMidServerOI">e90bcfed2f2cd850ed9c808cf699b6c6</sys_scope>
+        <sys_update_name>sysauto_script_7aee0fe52f6cd850ed9c808cf699b69b</sys_update_name>
+        <sys_updated_by>vivek.satta</sys_updated_by>
+        <sys_updated_on>2020-05-03 11:54:17</sys_updated_on>
+        <time_zone/>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="recommendation" table="x_20467_scalingmid_oi_mid_server_scaling" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>recommendation</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Three MID Servers each with Memory: 12GB and Processor: 4 Cores</label>
+            <language>en</language>
+            <name>x_20467_scalingmid_oi_mid_server_scaling</name>
+            <sequence/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-05-03 11:24:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c91a1be92facd850ed9c808cf699b6e9</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>vivek.satta</sys_updated_by>
+            <sys_updated_on>2020-05-03 11:51:08</sys_updated_on>
+            <value>one</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>recommendation</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Three MID Servers each with Memory: 24GB and Processor: 8 Cores</label>
+            <language>en</language>
+            <name>x_20467_scalingmid_oi_mid_server_scaling</name>
+            <sequence/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-05-03 11:25:15</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>982ad3a92facd850ed9c808cf699b6c3</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>vivek.satta</sys_updated_by>
+            <sys_updated_on>2020-05-03 11:51:13</sys_updated_on>
+            <value>two</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>recommendation</element>
+            <name>x_20467_scalingmid_oi_mid_server_scaling</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-05-03 11:24:54</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>1c2a176d2facd850ed9c808cf699b6d8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>recommendation</sys_name>
+            <sys_package display_value="ScalingMidServerOI" source="x_20467_scalingmid">e90bcfed2f2cd850ed9c808cf699b6c6</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="ScalingMidServerOI">e90bcfed2f2cd850ed9c808cf699b6c6</sys_scope>
+            <sys_update_name>sys_choice_x_20467_scalingmid_oi_mid_server_scaling_recommendation</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-05-03 11:24:54</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>
