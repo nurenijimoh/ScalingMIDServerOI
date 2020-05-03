@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="number_of_metrics_monitored" label="Number Of Metrics Monitored" language="en" table="x_20467_scalingmid_oi_mid_server_scaling">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>number_of_metrics_monitored</element>
+            <help/>
+            <hint/>
+            <label>Number Of Metrics Monitored</label>
+            <language>en</language>
+            <name>x_20467_scalingmid_oi_mid_server_scaling</name>
+            <plural>Number Of Metrics Monitored</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-05-03 10:25:24</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>f48c4fa12f6cd850ed9c808cf699b64c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Number Of Metrics Monitored</sys_name>
+            <sys_package display_value="ScalingMidServerOI" source="x_20467_scalingmid">e90bcfed2f2cd850ed9c808cf699b6c6</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="ScalingMidServerOI">e90bcfed2f2cd850ed9c808cf699b6c6</sys_scope>
+            <sys_update_name>sys_documentation_x_20467_scalingmid_oi_mid_server_scaling_number_of_metrics_monitored_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-05-03 10:25:24</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

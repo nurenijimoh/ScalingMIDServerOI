@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="OI Mid Server Scaling" max_length="40" name="x_20467_scalingmid_oi_mid_server_scaling" type="collection">
+        <element label="Number Of Metrics Monitored" max_length="40" name="number_of_metrics_monitored" type="integer"/>
+        <element label="Number of Nodes Monitored" max_length="40" name="number_of_nodes_monitored" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Recommendation" max_length="100" name="recommendation" type="string"/>
+        <element label="Report Ran" max_length="40" name="report_ran" type="glide_date_time"/>
+        <element label="Total Number metrics by Nodes" max_length="40" name="total_number_metrics_by_nodes" type="integer"/>
+    </element>
+</database>

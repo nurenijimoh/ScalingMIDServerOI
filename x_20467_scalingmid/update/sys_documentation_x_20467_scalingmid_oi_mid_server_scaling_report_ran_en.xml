@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="report_ran" label="Report Ran" language="en" table="x_20467_scalingmid_oi_mid_server_scaling">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>report_ran</element>
+            <help/>
+            <hint/>
+            <label>Report Ran</label>
+            <language>en</language>
+            <name>x_20467_scalingmid_oi_mid_server_scaling</name>
+            <plural>Report Rans</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-05-03 10:27:40</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>7d0d0fe12f6cd850ed9c808cf699b64b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Report Ran</sys_name>
+            <sys_package display_value="ScalingMidServerOI" source="x_20467_scalingmid">e90bcfed2f2cd850ed9c808cf699b6c6</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="ScalingMidServerOI">e90bcfed2f2cd850ed9c808cf699b6c6</sys_scope>
+            <sys_update_name>sys_documentation_x_20467_scalingmid_oi_mid_server_scaling_report_ran_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-05-03 10:27:40</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
